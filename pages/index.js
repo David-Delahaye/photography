@@ -1,65 +1,67 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Textimage from "../components/text-image";
+import Picturesquare from "../components/picture-square";
+
+const data = [
+  {
+    text: {
+      head: "David Delahaye",
+      body: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange`,
+      link: "See more",
+      slug: "/about",
+    },
+    image: {
+      src:
+        "https://images.unsplash.com/photo-1450631835004-9b95ff5cd66f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    },
+  },
+  {
+    text: {
+      head: "Albums",
+      body: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange`,
+      link: "See more",
+      slug: "/albums",
+    },
+    image: {
+      src:
+        "https://images.unsplash.com/photo-1542339462-14abfe8ff6ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    },
+  },
+  {
+    text: {
+      head: "Stories",
+      body: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange`,
+      link: "See more",
+      slug: "/stories",
+    },
+    image: {
+      src:
+        "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    },
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+    <div>
+      <Textimage data={data[0]} reverse />
+      <Textimage data={data[1]} light />
+      <Textimage data={data[2]} reverse light />
+      <div className="four-squares">
+        <Picturesquare data={data[0]} light />
+        <Picturesquare data={data[1]} />
+        <Picturesquare data={data[2]} light />
+        <Picturesquare data={data[0]} />
+      </div>
     </div>
-  )
+  );
 }

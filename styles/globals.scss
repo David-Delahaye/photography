@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+
+$sm: 0.5rem;
+$md: 1rem;
+$lg: 2rem;
+$xl: 3rem;
+$xxl: 5rem;
+
+$fnt-lg: 1.5rem;
+$fnt-md: 1rem;
+$fnt-sm: 0.7rem;
+
+$dark: hsl(0, 0%, 0%);
+$light: hsl(0, 0%, 100%);
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: $dark;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.burger {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: 1s;
+  &.open {
+    .slice:nth-of-type(1) {
+      transform: rotate(45deg);
+    }
+    .slice:nth-of-type(2) {
+      transform: translateX(50px);
+    }
+    .slice:nth-of-type(3) {
+      transform: rotate(-45deg);
+    }
+  }
+  .slice {
+    transform-origin: left;
+    transition: 300ms;
+    width: 100%;
+    height: 2px;
+    background-color: $dark;
+  }
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 4rem;
+  padding: $md $md;
+  display: flex;
+  align-items: center;
+  background-color: $light;
+  .brand {
+    display: flex;
+    margin-left: 0px;
+    align-items: center;
+    font-weight: 800;
+  }
+  li {
+    margin-left: $md;
+    font-size: $fnt-lg;
+    transition: 0.3s;
+    padding: $sm;
+    &:hover {
+      background-color: $dark;
+      color: $light;
+      a {
+        color: $light;
+      }
+    }
+  }
+  .nav-right {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  .mobile {
+    position: absolute;
+    right: 0px;
+    top: 3rem;
+    flex-direction: column;
+    width: 10rem;
+    right: -10rem;
+    transition: right 300ms;
+    li {
+      padding: $md;
+      padding-right: $xxl;
+      background-color: $light;
+    }
+    &.open {
+      right: 0rem;
+    }
+  }
+}
+
+.text-image {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  overflow: hidden;
+  .image {
+    transition: transform 0.3s;
+    min-height: 40vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    &.active {
+      transform: scale(1.05);
+    }
+    .image-display {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .text {
+    position: relative;
+    flex: 4;
+    background-color: $dark;
+    color: $light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $md;
+    &.light {
+      background-color: $light;
+      color: $dark;
+      .text-link {
+        color: $dark;
+      }
+    }
+    .text-head {
+      margin-bottom: $md;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .text-body {
+      margin-bottom: $md;
+      font-weight: 300;
+    }
+    .text-link {
+      text-decoration: none;
+      display: flex;
+      color: $light;
+      align-items: center;
+      margin-top: $lg;
+      line-height: $xl;
+      font-weight: 800;
+      cursor: pointer;
+      &:hover {
+        svg {
+          margin-left: $xl;
+        }
+      }
+      svg {
+        transition: 0.3s;
+        margin-left: $sm;
+      }
+    }
+  }
+}
+
+.four-squares {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  .picture-square {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+      .text {
+        svg {
+          margin-left: $xxl;
+        }
+      }
+    }
+    img {
+      transition: transform 0.3s;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+    .text {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 800;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: 3rem;
+      background-color: $dark;
+      color: $light;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: $lg;
+      svg {
+        margin-left: $md;
+        transition: margin 0.3s;
+      }
+      &.light {
+        background-color: $light;
+        color: $dark;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 17px;
+  }
+  .text-image {
+    flex-direction: row;
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+    .text {
+      flex: 7;
+    }
+    .image {
+      height: auto;
+      flex: 3;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  html {
+    font-size: 18px;
+  }
+  .text-image {
+    flex-direction: row;
+    .text {
+      flex: 4;
+    }
+    .image {
+      flex: 6;
+    }
+  }
+  .four-squares {
+    .picture-square {
+      width: 25%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
