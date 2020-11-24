@@ -47,6 +47,14 @@ li {
   list-style: none;
 }
 
+.loaded {
+  opacity: 1;
+}
+
+img {
+  transition: 1s;
+}
+
 .burger {
   width: 32px;
   height: 32px;
@@ -133,8 +141,9 @@ nav {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-height: 50vh;
+  max-height: 70vh;
   .image {
-    min-height: 70vh;
     transition: transform 0.3s;
     width: 100%;
     overflow: hidden;
@@ -145,6 +154,8 @@ nav {
     .image-display {
       object-fit: cover;
       object-position: center;
+      height: 100%;
+      min-width: 100%;
     }
   }
   .text {

@@ -3,11 +3,15 @@ import { useState } from "react";
 
 export default function TextimageHead({ data, light, reverse }) {
   const [active, setActive] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className={`text-image ${reverse ? "reverse" : ""}`}>
       <div className={`image ${active ? "active" : ""}`}>
-        <Image
-          className="image-display"
+        <img
+          className={`image-display ${loaded && "loaded"}`}
+          onLoad={() => {
+            setLoaded(true);
+          }}
           src={data.image.src}
           layout="fill"
           alt="image"

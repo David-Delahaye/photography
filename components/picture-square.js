@@ -1,10 +1,18 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Picturesquare({ data, light }) {
+  const [loaded, setLoaded] = useState(false);
   return (
     <a className="picture-square" href={data.text && data.text.slug}>
       <div>
-        <img src={data.image.src} />
+        <img
+          src={data.image.src}
+          onLoad={() => {
+            setLoaded(true);
+          }}
+          className={`${loaded ? "loaded" : ""}`}
+        />
         {data.text && (
           <div className={`text ${light ? "light" : ""}`}>
             {data.text.head}

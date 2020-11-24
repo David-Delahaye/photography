@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Textimage({ data, light, reverse }) {
   const [active, setActive] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const link = (
     <a
@@ -39,10 +40,13 @@ export default function Textimage({ data, light, reverse }) {
 
   const image = (
     <div className={`image ${active ? "active" : ""}`}>
-      <Image
-        className="image-display"
+      <img
+        className={`image-display ${loaded ? "loaded" : ""}`}
         src={data.image && `${data.image.src}`}
         layout="fill"
+        onLoad={() => {
+          setLoaded(true);
+        }}
         alt="image"
       />
     </div>
