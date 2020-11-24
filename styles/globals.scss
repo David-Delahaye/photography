@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -115,6 +119,9 @@ nav {
       padding: $md;
       padding-right: $xxl;
       background-color: $light;
+      &:hover {
+        background-color: $dark;
+      }
     }
     &.open {
       right: 0rem;
@@ -125,11 +132,10 @@ nav {
 .text-image {
   display: flex;
   flex-direction: column;
-  min-height: 70vh;
   overflow: hidden;
   .image {
+    min-height: 70vh;
     transition: transform 0.3s;
-    min-height: 40vh;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -191,7 +197,7 @@ nav {
 
 .four-squares {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   .picture-square {
     width: 50%;
     position: relative;

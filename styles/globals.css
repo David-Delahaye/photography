@@ -16,6 +16,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -143,6 +147,10 @@ nav .mobile li {
   background-color: white;
 }
 
+nav .mobile li:hover {
+  background-color: black;
+}
+
 nav .mobile.open {
   right: 0rem;
 }
@@ -155,16 +163,15 @@ nav .mobile.open {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 70vh;
   overflow: hidden;
 }
 
 .text-image .image {
+  min-height: 70vh;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
-  min-height: 40vh;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -254,8 +261,8 @@ nav .mobile.open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .four-squares .picture-square {

@@ -1,16 +1,20 @@
 import stories from "../../lib/stories";
 import Picturesquare from "../../components/picture-square";
+import TextimageHead from "../../components/text-image-head";
 import Textimage from "../../components/text-image";
+import Paragraph from "../../components/paragraph";
+import Subscribe from "../../components/subscribe";
 
 export default function Story({ story }) {
+  const paragraphRender = story.content.paragraphs.map((e, i) => {
+    if (i % 2 === 0) return <Textimage data={e} reverse light />;
+    return <Textimage data={e} reverse />;
+  });
   return (
     <div>
-      <Textimage data={story} reverse />
-      <h1>{story.text.head}</h1>
-      <div>{story.text.body}</div>
-      <div>{story.text.body}</div>
-      <div>{story.text.body}</div>
-      <div>{story.text.body}</div>
+      <TextimageHead data={story} reverse />
+      {paragraphRender}
+      <Subscribe />
     </div>
   );
 }
