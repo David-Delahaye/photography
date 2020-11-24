@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Textimage from "../components/text-image";
 import Picturesquare from "../components/picture-square";
+import Subscribe from "../components/subscribe";
 
 const data = [
   {
@@ -62,6 +63,7 @@ export default function Home() {
         <Picturesquare data={data[2]} light />
         <Picturesquare data={data[0]} />
       </div>
+      <Subscribe />
     </div>
   );
 }

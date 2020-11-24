@@ -292,6 +292,7 @@ nav .mobile.open {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 800;
+  font-size: 0.7rem;
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -307,7 +308,7 @@ nav .mobile.open {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .four-squares .picture-square .text svg {
@@ -319,6 +320,120 @@ nav .mobile.open {
 .four-squares .picture-square .text.light {
   background-color: white;
   color: black;
+}
+
+.subscription {
+  padding: 1rem;
+  margin: 3rem 0px;
+}
+
+.subscription .subscription-text .head {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+}
+
+.subscription .subscription-text .body {
+  font-weight: 300;
+  max-width: 30rem;
+  margin: 1rem 0px;
+}
+
+.subscription .subscription-bar {
+  width: 100%;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.subscription .subscription-bar .input {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  display: block;
+  width: 75%;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 4;
+          flex: 3 4;
+  background-color: rgba(217, 217, 217, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.subscription .subscription-bar .button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0;
+          flex: 1 0;
+  padding: 0px 1rem;
+  display: block;
+  width: 25%;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  cursor: pointer;
+}
+
+.subscription .subscription-bar .button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.subscription .subscription-bar .button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.footer {
+  width: 100%;
+  min-height: 10rem;
+  background-color: black;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer div {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.footer .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.footer .nav a {
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+}
+
+.footer .info {
+  margin-top: auto;
+  margin-left: auto;
+  justify-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 @media only screen and (min-width: 600px) {
@@ -338,15 +453,15 @@ nav .mobile.open {
             flex-direction: row-reverse;
   }
   .text-image .text {
-    -webkit-box-flex: 7;
-        -ms-flex: 7;
-            flex: 7;
+    -webkit-box-flex: 6;
+        -ms-flex: 6;
+            flex: 6;
   }
   .text-image .image {
     height: auto;
-    -webkit-box-flex: 3;
-        -ms-flex: 3;
-            flex: 3;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
   }
 }
 
@@ -372,6 +487,12 @@ nav .mobile.open {
   }
   .four-squares .picture-square {
     width: 25%;
+  }
+  .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 

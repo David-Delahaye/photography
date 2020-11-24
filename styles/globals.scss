@@ -11,6 +11,8 @@ $fnt-md: 1rem;
 $fnt-sm: 0.7rem;
 
 $dark: hsl(0, 0%, 0%);
+$dark-faint: hsla(100, 100%, 0%, 0.5);
+$light-faint: hsla(0, 0%, 85%, 0.5);
 $light: hsl(0, 0%, 100%);
 
 html,
@@ -189,7 +191,6 @@ nav {
     width: 50%;
     position: relative;
     overflow: hidden;
-
     &::after {
       content: "";
       display: block;
@@ -217,6 +218,7 @@ nav {
       text-transform: uppercase;
       letter-spacing: 4px;
       font-weight: 800;
+      font-size: $fnt-sm;
       position: absolute;
       bottom: 0px;
       width: 100%;
@@ -226,7 +228,7 @@ nav {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding-left: $lg;
+      padding-left: $md;
       svg {
         margin-left: $md;
         transition: margin 0.3s;
@@ -236,6 +238,87 @@ nav {
         color: $dark;
       }
     }
+  }
+}
+
+.subscription {
+  padding: $md;
+  margin: $xl 0px;
+  .subscription-text {
+    .head {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 800;
+    }
+    .body {
+      font-weight: 300;
+      max-width: 30rem;
+      margin: $md 0px;
+    }
+  }
+  .subscription-bar {
+    width: 100%;
+    height: $xl;
+    display: flex;
+    .input {
+      padding-left: $md;
+      font-size: $fnt-lg;
+      display: block;
+      width: 75%;
+      flex: 3 4;
+      background-color: $light-faint;
+      color: $dark-faint;
+      border: none;
+    }
+    .button {
+      flex: 1 0;
+      padding: 0px $md;
+      display: block;
+      width: 25%;
+      border: none;
+      outline: none;
+      background-color: $dark;
+      color: $light;
+      font-size: $fnt-md;
+      transition: transform 0.3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  min-height: 10rem;
+  background-color: $dark;
+  color: $light;
+  display: flex;
+  padding: $md;
+  flex-direction: column;
+  div {
+    margin-bottom: $sm;
+    margin-right: $sm;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    color: $light;
+    a {
+      color: $light;
+      width: fit-content;
+      margin-bottom: $sm;
+    }
+  }
+  .info {
+    margin-top: auto;
+    margin-left: auto;
+    justify-self: flex-end;
+    align-self: flex-end;
   }
 }
 
@@ -249,11 +332,11 @@ nav {
       flex-direction: row-reverse;
     }
     .text {
-      flex: 7;
+      flex: 6;
     }
     .image {
       height: auto;
-      flex: 3;
+      flex: 4;
     }
   }
 }
@@ -275,6 +358,9 @@ nav {
     .picture-square {
       width: 25%;
     }
+  }
+  .footer {
+    flex-direction: row;
   }
 }
 
