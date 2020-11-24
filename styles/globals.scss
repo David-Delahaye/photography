@@ -22,6 +22,11 @@ body {
   overflow-x: hidden;
 }
 
+.page {
+  min-height: 85vh;
+  padding-top: 4rem;
+}
+
 a {
   color: $dark;
   text-decoration: none;
