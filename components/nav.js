@@ -17,11 +17,15 @@ export default function Nav() {
 
   let renderNavigations = navigations.map((e, i) => {
     return (
-      <li key={i}>
-        <Link href={e.text.slug}>
-          <a href="">{e.text.head}</a>
-        </Link>
-      </li>
+      <Link href={e.text.slug} key={i}>
+        <a
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          {e.text.head}
+        </a>
+      </Link>
     );
   });
 
